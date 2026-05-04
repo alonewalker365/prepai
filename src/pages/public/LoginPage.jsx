@@ -17,6 +17,7 @@ export function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch(clearError());
+    console.log("API URL:", import.meta.env.VITE_API_URL);
     const result = await dispatch(loginUser(form));
     if (loginUser.fulfilled.match(result)) {
       toast.success('Welcome back!');
