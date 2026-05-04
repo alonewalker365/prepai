@@ -7,7 +7,7 @@ export const getSocket = () => socket;
 export const connectSocket = (token) => {
   if (socket?.connected) return socket;
 
-  socket = io(import.meta.env.VITE_SOCKET_URL, {
+  socket = io(import.meta.env.VITE_SOCKET_URL || 'https://prepai-backend-0ian.onrender.com', {
     auth: { token },
     transports: ['websocket'],
     reconnection: true,
